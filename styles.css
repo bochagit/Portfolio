@@ -30,12 +30,26 @@ body, div, ul, nav, header, footer, a ,li , label {
 
 .header__open-nav-button {
     color: #48e;
-    font-size: 3rem;
     font-weight: 600;
-    position: absolute;
+    position: fixed;
     right: 10px;
+    height: 2.5rem;
+    width: 2.5rem;
     transform: rotate();
     transition: transform .5s;
+    animation: button-movement both;
+    animation-timeline: scroll();
+    animation-range: 10px 100px;
+}
+
+.header__open-nav-button span {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: monospace; /* Esto ayuda a igualar el alto en todos los sistemas */
 }
 
 .header__checkbox {
@@ -45,8 +59,8 @@ body, div, ul, nav, header, footer, a ,li , label {
 .header__nav {
     display: none;
     background-color: #fff;
-    position: absolute;
-    height: 100vh;
+    position: fixed;
+    height: 100dvh;
     width: 100vw;
     top: 0;
     z-index: -1;
@@ -55,7 +69,7 @@ body, div, ul, nav, header, footer, a ,li , label {
 .header__nav-list {
     display: flex;
     flex-direction: column;
-    height: 40vh;
+    height: 40dvh;
     margin: auto;
     justify-content: space-evenly;
 }
@@ -88,7 +102,7 @@ body, div, ul, nav, header, footer, a ,li , label {
 
 /* ----- HEADER QUERIES ----- */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 720px) {
     .header {
         padding: 20px 0;
         animation: header-movement both;
@@ -134,6 +148,7 @@ body, div, ul, nav, header, footer, a ,li , label {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: #fff;
     max-width: 1400px;
 }
@@ -212,6 +227,7 @@ h1 {
 @container profile (min-width: 720px) {
     .profile__wrapper {
         flex-direction: row;
+        align-items: normal;
         padding: 20px;
         background-color: transparent;
         height: 90vh;
@@ -228,12 +244,13 @@ h1 {
 
     h1 {
         margin-top: 0;
-        font-size: 4rem;
+        font-size: clamp(2rem, 5vw, 3rem);
         text-wrap: balance;
     }
 
     .profile__data {
         max-width: 620px;
+        font-size: clamp(1rem, 1.6vw, 1.2rem);
     }
 
     .profile__img-container {
@@ -384,7 +401,7 @@ h1 {
 
 /* ----- CONTACT QUERIES ----- */
 
-@container form (min-width: 56.25rem) {
+@container form (min-width: 720px) {
     .form__form {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
@@ -440,12 +457,145 @@ footer {
 /* ----- ANIMACIONES ----- */
 
 @keyframes header-movement {
-    from {
+    0% {
         padding: 20px 0;
         background-color: #fff;
     }
 
-    to {
+    5% {
+        padding: 19px 0;
+        background: linear-gradient(to top, transparent 100%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    10% {
+        padding: 18px 0;
+        background: linear-gradient(to top, transparent 95%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    15% {
+        padding: 17px 0;
+        background: linear-gradient(to top, transparent 90%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    20% {
+        padding: 16px 0;
+        background: linear-gradient(to top, transparent 85%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    25% {
+        padding: 15px 0;
+        background: linear-gradient(to top, transparent 80%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    30% {
+        padding: 14px 0;
+        background: linear-gradient(to top, transparent 75%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    35% {
+        padding: 13px 0;
+        background: linear-gradient(to top, transparent 70%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    40% {
+        padding: 12px 0;
+        background: linear-gradient(to top, transparent 65%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    45% {
+        padding: 11px 0;
+        background: linear-gradient(to top, transparent 60%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    50% {
+        padding: 10px 0;
+        background: linear-gradient(to top, transparent 55%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    55% {
+        padding: 9px 0;
+        background: linear-gradient(to top, transparent 50%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    60% {
+        padding: 8px 0;
+        background: linear-gradient(to top, transparent 45%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    65% {
+        padding: 7px 0;
+        background: linear-gradient(to top, transparent 40%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    70% {
+        padding: 6px 0;
+        background: linear-gradient(to top, transparent 35%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    75% {
+        padding: 5px 0;
+        background: linear-gradient(to top, transparent 30%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    80% {
+        padding: 4px 0;
+        background: linear-gradient(to top, transparent 25%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    85% {
+        padding: 3px 0;
+        background: linear-gradient(to top, transparent 20%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    90% {
+        padding: 2px 0;
+        background: linear-gradient(to top, transparent 15%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    95% {
+        padding: 1px 0;
+        background: linear-gradient(to top, transparent 10%, #101632bb);
+        color: #fff;
+        text-shadow: 2px 2px 7px #101632bb;
+    }
+
+    100% {
         padding: 0;
         background: linear-gradient(to top, transparent, #101632bb);
         color: #fff;
@@ -454,11 +604,25 @@ footer {
 }
 
 @keyframes aparecer {
-    from {
+    0% {
         opacity: 0;
     }
 
-    to {
+    100% {
         opacity: 1;
+    }
+}
+
+@keyframes button-movement {
+    0% {
+        margin: 0;
+    }
+
+    100% {
+        margin-right: 10px;
+        margin-top: 10px;
+        background-color: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px #0008;
     }
 }
