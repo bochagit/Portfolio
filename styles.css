@@ -393,6 +393,17 @@ h1 {
     padding: 12px;
     background-color: #48e;
     color: #fff;
+    transition: background-color .3s;
+}
+
+.form__input-container input[type="submit"]:hover {
+    background-color: #26a;
+    cursor: pointer;
+}
+
+.form__input-container input[type="submit"]:active {
+    box-shadow: 0 0 10px #0008;
+    opacity: .5;
 }
 
 .form__title {
