@@ -180,7 +180,7 @@ h1 {
     list-style: none;
     display: flex;
     margin: 10px;
-    max-width: 450px;
+    max-width: 550px;
     margin-left: 0;
     align-items: center;
 }
@@ -198,6 +198,7 @@ h1 {
 
 .profile__skill-name {
     color: #48e;
+    width: 150px;
 }
 
 .load-bar__bar {
