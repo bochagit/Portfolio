@@ -9,6 +9,17 @@
     <meta name="description" content="Portfolio personal de Gonzalo Cardozo, mostrando habilidades y proyectos.">
     <meta name="keywords" content="portfolio, Gonzalo Cardozo, habilidades, proyectos, contacto">
     <meta name="author" content="Gonzalo Cardozo">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "ppHn-m8bd9i8TczJ_",
+        });
+    })();
+    </script>
+    <script src="sendmail.js"></script>
 </head>
 <body>
     <header class="header">
@@ -96,25 +107,25 @@
     </section>
     <section class="form" id="contact">
         <h2 class="form__title">CONTACT</h2>
-        <form class="form__form">
+        <form class="form__form" id="contact-form">
             <div class="form__input-container">
                 <label>Nombre
-                    <input type="text" placeholder="John">
+                    <input type="text" id="name" placeholder="John" required>
                 </label>
             </div>
             <div class="form__input-container">
                 <label>Apellido
-                    <input type="text" placeholder="Doe">
+                    <input type="text" id="surname" placeholder="Doe" required>
                 </label>
             </div>
             <div class="form__input-container">
                 <label>E-Mail
-                    <input type="email" placeholder="yourmail@example.com">
+                    <input type="email" id="email" placeholder="yourmail@example.com" required>
                 </label>
             </div>
             <div class="form__input-container">
                 <label>Mensaje
-                    <textarea placeholder="Your message..."></textarea>
+                    <textarea id="message" placeholder="Your message..." required></textarea>
                 </label>
             </div>
             <div class="form__input-container">
@@ -125,27 +136,6 @@
     <footer>
         <strong>GONZALO CARDOZO</strong> - Copyright © 2025
     </footer>
-    <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.querySelectorAll('.header__nav-item a');
-    const body = document.body;
-
-    // Bloquear/desbloquear scroll al abrir/cerrar el menú
-    menuToggle.addEventListener('change', () => {
-        if (menuToggle.checked) {
-            body.style.overflow = 'hidden';
-        } else {
-            body.style.overflow = '';
-        }
-    });
-
-    // Cerrar el menú al hacer clic en un enlace
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.checked = false;
-            body.style.overflow = '';
-        });
-    });
-</script>
+    <script src="menutoggle.js"></script>
 </body>
 </html>
